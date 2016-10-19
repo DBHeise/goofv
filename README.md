@@ -7,11 +7,25 @@ Find more about Office File Validation [here](https://support.microsoft.com/en-u
 ## Building From Source
 assuming you already have GO installed and in the PATH
 ```batch
-    git clone https://github.com/DBHeise/goofv.git
-    cd goofv
-    set GOPATH=%CD%
-    go get
-    go build 
+git clone https://github.com/DBHeise/goofv.git
+cd goofv
+set GOPATH=%CD%
+go get
+go build 
+```
+
+## Running goofv.exe
+You MUST have Office installed on the same machine where goofv runs, it searches for the install location based on the installed version.
+
+The command-line options are easily shown with the /? or -? argument:
+```
+Usage of goofv.exe:
+  -file string
+        file to validate
+  -format string
+        output format (must be one of: txt,csv,json,xml) (default "txt")
+  -mode string
+        validation mode (must be one of: xls,doc,ppt) (default "xls")
 ```
 
 ## Understanding failures
