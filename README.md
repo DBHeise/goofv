@@ -10,6 +10,12 @@ assuming you already have GO installed and in the PATH
     git clone https://github.com/DBHeise/goofv.git
     cd goofv
     set GOPATH=%CD%
-    go get -v golang.org/x/sys/windows/registry
+    go get
     go build 
 ```
+
+## Understanding failures
+With the log settings that goofv forces, you will get an XML file in the %TMP% folder that contains details on the failure. It is an XML file that will probably have a bunch of information you don't care about, but IF you want to know the exact path inside the file where validation failed the GKError block in the XML is where you should start (you can use the typename and membername fields on the CallstackElement to search the
+  [Binary Documentation](https://msdn.microsoft.com/en-us/library/office/cc313105(v=office.14).aspx)
+, or in
+  [OffVis](https://msdn.microsoft.com/en-us/library/office/gg615407(v=office.14).aspx)
